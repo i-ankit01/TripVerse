@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+// Import pages
+import Landing from './pages/Landing'
+import SignIn from './pages/SignIn'
+import SignUp from './pages/SignUp'
+import DashboardHome from './pages/DashboardHome'
+import DashboardTripPlanner from './pages/DashboardTripPlanner'
+import DashboardExplore from './pages/DashboardExplore'
+import DashboardPreview from './pages/DashboardPreview'
+import DashboardBookings from './pages/DashboardBookings'
+import DashboardChat from './pages/DashboardChat'
+import DashboardSettings from './pages/DashboardSettings'
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+// Import layouts
+import DashboardLayout from './layouts/DashboardLayout'
+
+/**
+ * App - Main application component with routing setup
+ * Defines all the routes and their corresponding components
+ */
+function App() {
+    return (
+        <Router>
+            <div className="App">
+                <Routes>
+                    {/* Public Routes */}
+                    <Route path="/" element={<Landing />} />
+                    <Route path="/signin" element={<SignIn />} />
+                    <Route path="/signup" element={<SignUp />} />
+                    
+                    {/* Protected Dashboard Routes */}
+                    {/* All dashboard routes are wrapped with DashboardLayout for consistent sidebar navigation */}
+                    <Route path="/dashboard/home" element={<DashboardLayout><DashboardHome /></DashboardLayout>} />
+                    <Route path="/dashboard/trip-planner" element={<DashboardLayout><DashboardTripPlanner /></DashboardLayout>} />
+                    <Route path="/dashboard/explore" element={<DashboardLayout><DashboardExplore /></DashboardLayout>} />
+                    <Route path="/dashboard/preview" element={<DashboardLayout><DashboardPreview /></DashboardLayout>} />
+                    <Route path="/dashboard/bookings" element={<DashboardLayout><DashboardBookings /></DashboardLayout>} />
+                    <Route path="/dashboard/chat" element={<DashboardLayout><DashboardChat /></DashboardLayout>} />
+                    <Route path="/dashboard/settings" element={<DashboardLayout><DashboardSettings /></DashboardLayout>} />
+                    
+                    {/* Redirect to home for unknown routes */}
+                    <Route path="*" element={<Landing />} />
+                </Routes>
+            </div>
+        </Router>
+    )
 }
 
 export default App

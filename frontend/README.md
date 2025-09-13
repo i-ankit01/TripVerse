@@ -1,12 +1,87 @@
-# React + Vite
+# Jharkhand Darshan - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean and simple React frontend for the Jharkhand Darshan hackathon project.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React + Vite** - Fast development and building
+- **TailwindCSS** - Utility-first CSS framework for styling
+- **React Router DOM** - Client-side routing
+- **Responsive Design** - Works on all device sizes
+- **Clean Architecture** - Well-organized folder structure
 
-## Expanding the ESLint configuration
+## 📁 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── components/          # Reusable UI components
+│   ├── Navbar.jsx      # Navigation bar for landing page
+│   └── Sidebar.jsx     # Sidebar for dashboard pages
+├── pages/              # Main page components
+│   ├── Landing.jsx     # Landing page with hero section
+│   ├── SignIn.jsx      # User sign in page
+│   ├── SignUp.jsx      # User registration page
+│   ├── DashboardHome.jsx    # Dashboard home page
+│   ├── DashboardExplore.jsx # Explore places page
+│   └── DashboardChat.jsx    # AI chatbot page
+├── layouts/            # Layout wrapper components
+│   ├── AuthLayout.jsx  # Layout for auth pages (centered card)
+│   └── DashboardLayout.jsx # Layout for dashboard (sidebar + content)
+├── App.jsx             # Main app component with routing
+├── main.jsx            # React root render
+└── index.css           # TailwindCSS imports and custom styles
+```
+
+## 🛣️ Routes
+
+- `/` - Landing page with hero section
+- `/signin` - Sign in page
+- `/signup` - Sign up page
+- `/dashboard/home` - Dashboard home
+- `/dashboard/explore` - Explore places
+- `/dashboard/chat` - AI chatbot
+
+## 🎨 Design Features
+
+- **Modern UI** - Clean and professional design
+- **Indigo Color Scheme** - Consistent branding
+- **Smooth Animations** - Hover effects and transitions
+- **Accessibility** - Focus states and semantic HTML
+- **Mobile Responsive** - Works on all screen sizes
+
+## 🚀 Getting Started
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Open your browser and visit `http://localhost:5173`
+
+## 🛠️ Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## 📝 Notes
+
+- All components are beginner-friendly with detailed comments
+- Forms are set up with basic state management (ready for backend integration)
+- Placeholder content is used for demonstration
+- Easy to extend and customize for your specific needs
+
+## 🔧 Customization
+
+- Update colors in TailwindCSS classes
+- Modify content in page components
+- Add new routes in `App.jsx`
+- Extend layouts as needed
+
+Happy coding! 🎉
