@@ -6,7 +6,7 @@ import React from 'react'
  */
 const DashboardSettings = () => {
     return (
-        <div className='max-w-4xl mx-auto'>
+        <div className='max-w-4xl mx-auto p-6'>
             {/* Page Header */}
             <div className='mb-8'>
                 <h1 className='text-3xl font-bold text-gray-900 mb-4'>User Settings</h1>

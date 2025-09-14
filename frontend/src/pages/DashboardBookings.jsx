@@ -6,7 +6,7 @@ import React from 'react'
  */
 const DashboardBookings = () => {
     return (
-        <div className='max-w-6xl mx-auto'>
+        <div className='max-w-6xl mx-auto p-6'>
             {/* Page Header */}
             <div className='mb-8'>
                 <h1 className='text-3xl font-bold text-gray-900 mb-4'>My Bookings</h1>

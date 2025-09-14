@@ -17,53 +17,6 @@ export default function DashboardTripPlanner() {
 
       const data = await getOutput(formData)
 
-
-      const mockResponse = {
-        totalCost: {
-          min: 1200,
-          max: 2500,
-          currency: "USD",
-        },
-        itinerary: [
-          {
-            day: 1,
-            activities: ["Arrive and check-in", "Explore city center", "Welcome dinner"],
-            locations: ["Airport", "Hotel", "Downtown"],
-          },
-          {
-            day: 2,
-            activities: ["Museum visit", "Local market tour", "Sunset viewing"],
-            locations: ["Art Museum", "Central Market", "Viewpoint Hill"],
-          },
-          {
-            day: 3,
-            activities: ["Adventure activity", "Local cuisine experience", "Shopping"],
-            locations: ["Adventure Park", "Food District", "Shopping Mall"],
-          },
-        ],
-        recommendations: {
-          hotels: [
-            { name: "Grand Plaza Hotel", price: "$120/night", rating: 4.5 },
-            { name: "Boutique Inn", price: "$85/night", rating: 4.2 },
-            { name: "Luxury Resort", price: "$250/night", rating: 4.8 },
-          ],
-          restaurants: [
-            { name: "Local Flavors", cuisine: "Traditional", price: "$$" },
-            { name: "Rooftop Bistro", cuisine: "International", price: "$$$" },
-            { name: "Street Food Market", cuisine: "Various", price: "$" },
-          ],
-          attractions: [
-            { name: "Historic Cathedral", type: "Cultural", duration: "2 hours" },
-            { name: "Adventure Park", type: "Recreation", duration: "4 hours" },
-            { name: "Art Gallery", type: "Cultural", duration: "1.5 hours" },
-          ],
-        },
-        transportation: {
-          flights: { estimated: "$400-800" },
-          local: { estimated: "$50-100" },
-        },
-      }
-
       setTripData(data)
     } catch (error) {
       console.error("Error planning trip:", error)
