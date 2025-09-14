@@ -1,9 +1,11 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
 
-const authRoutes = require("./routes/auth");
+import authRoutes from "./routes/auth.js";
+import planTripRoutes from "./routes/plan-trip.js";
 
 const app = express();
 app.use(express.json());
@@ -16,6 +18,7 @@ app.use(cors({
 
 // Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/plan-trip", planTripRoutes);
 
 // Start server
 mongoose.connect(process.env.MONGO_URI)
