@@ -99,7 +99,7 @@ export function TripPlannerForm({ onSubmit, isLoading }) {
               <Label htmlFor="currentLocation">Current Location</Label>
               <Input
                 id="currentLocation"
-                placeholder="e.g., New York, NY"
+                placeholder="e.g., Meerut, Mumbai"
                 value={formData.currentLocation}
                 onChange={(e) =>
                   setFormData((prev) => ({
@@ -114,7 +114,7 @@ export function TripPlannerForm({ onSubmit, isLoading }) {
               <Label htmlFor="destination">Destination</Label>
               <Input
                 id="destination"
-                placeholder="e.g., Paris, France"
+                placeholder="e.g., Netarhat, Ranchi"
                 value={formData.destination}
                 onChange={(e) =>
                   setFormData((prev) => ({
@@ -215,7 +215,7 @@ export function TripPlannerForm({ onSubmit, isLoading }) {
               </Select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="budget">Budget Range (USD)</Label>
+              <Label htmlFor="budget">Budget Range (INR)</Label>
               <Select
                 value={formData.budget}
                 onValueChange={(value) =>
@@ -226,11 +226,11 @@ export function TripPlannerForm({ onSubmit, isLoading }) {
                   <SelectValue placeholder="Select budget range" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="budget">Budget ($500-1500)</SelectItem>
+                  <SelectItem value="budget">Budget (₹5,000-10,000)</SelectItem>
                   <SelectItem value="mid-range">
-                    Mid-range ($1500-3000)
+                    Mid-range (₹15,000-30,000)
                   </SelectItem>
-                  <SelectItem value="luxury">Luxury ($3000+)</SelectItem>
+                  <SelectItem value="luxury">Luxury (₹50,000+)</SelectItem>
                   <SelectItem value="flexible">Flexible</SelectItem>
                 </SelectContent>
               </Select>

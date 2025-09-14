@@ -50,14 +50,15 @@ RULES:
     ]
   },
   "transportation": {
-    "flights": { "estimated": string },
+    "<mainModeFromInput>": { "estimated": string },  // e.g., train, bus, car, flight
     "local": { "estimated": string }
   }
 }
 
-3. The number of days in the itinerary must equal the "duration" field from the input JSON.
-4. Activities and recommendations must align with budget, travelStyle, interests, and specialRequests.
-5. Always return valid, parsable JSON.
+3. Replace <mainModeFromInput> with the user's chosen main transportation method from the input JSON (e.g., "train", "bus", "car", "flight").
+4. The number of days in the itinerary must equal the "duration" field from the input JSON.
+5. Activities and recommendations must align with budget, travelStyle, interests, and specialRequests.
+6. Always return valid, parsable JSON.
 `;
 
     // Call Gemini API

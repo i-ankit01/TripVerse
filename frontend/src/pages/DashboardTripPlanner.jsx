@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import { TripPlannerForm } from "@/components/TripPlannerForm"
 import { TripPlannerResult } from "@/components/TripPlannerResult"
 import { Plane, MapPin, Calendar, Users } from "lucide-react"
+import { getOutput } from "@/services/geminiService"
 
 export default function DashboardTripPlanner() {
   const [tripData, setTripData] = useState(null)
@@ -11,14 +12,12 @@ export default function DashboardTripPlanner() {
   const handleTripSubmit = async (formData) => {
     setIsLoading(true)
 
-    // Simulate API call - replace with your actual backend endpoint
     try {
       console.log("Sending to backend:", JSON.stringify(formData, null, 2))
 
-      // Simulate processing time
-      await new Promise((resolve) => setTimeout(resolve, 2000))
+      const data = await getOutput(formData)
 
-      // Mock response - replace with actual API response
+
       const mockResponse = {
         totalCost: {
           min: 1200,
@@ -65,7 +64,7 @@ export default function DashboardTripPlanner() {
         },
       }
 
-      setTripData(mockResponse)
+      setTripData(data)
     } catch (error) {
       console.error("Error planning trip:", error)
     } finally {
