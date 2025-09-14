@@ -24,7 +24,7 @@ const SignIn = () => {
 
       // Save tokens in localStorage
       localStorage.setItem("accessToken", data.accessToken);
-      localStorage.setItem("refreshToken", data.refreshToken);
+      // localStorage.setItem("refreshToken", data.refreshToken);
 
       // Redirect to dashboard
       navigate("/dashboard/home");

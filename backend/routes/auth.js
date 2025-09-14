@@ -10,16 +10,9 @@ function generateTokens(user) {
   const accessToken = jwt.sign(
     { id: user._id, role: user.role },
     process.env.JWT_SECRET,
-    { expiresIn: "15m" }
-  );
-
-  const refreshToken = jwt.sign(
-    { id: user._id },
-    process.env.JWT_REFRESH_SECRET,
     { expiresIn: "7d" }
   );
-
-  return { accessToken, refreshToken };
+  return accessToken;
 }
 
 // ✅ Register
@@ -37,13 +30,13 @@ router.post("/register", async (req, res) => {
     const user = new User({ name, email, passwordHash: hashed });
     await user.save();
 
-    const tokens = generateTokens(user);
+    const token = generateTokens(user);
 
     res.json({
       success: true,
       message: "User registered successfully",
       user: { id: user._id, name: user.name, email: user.email, role: user.role },
-      ...tokens
+      token : token
     });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
@@ -61,13 +54,13 @@ router.post("/login", async (req, res) => {
     const valid = await bcrypt.compare(password, user.passwordHash);
     if (!valid) return res.status(400).json({ success: false, message: "Invalid email or password" });
 
-    const tokens = generateTokens(user);
+    const token = generateTokens(user);
 
     res.json({
       success: true,
       message: "Login successful",
       user: { id: user._id, name: user.name, email: user.email, role: user.role },
-      ...tokens
+      token : token
     });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });

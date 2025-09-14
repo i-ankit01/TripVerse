@@ -12,7 +12,7 @@ app.use(express.json());
 
 // allow frontend to call backend
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: "http://localhost:5173",
   credentials: true
 }));
 
