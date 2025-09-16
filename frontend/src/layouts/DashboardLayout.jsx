@@ -20,6 +20,7 @@ import { Car, Globe, Rocket } from "lucide-react";
 
 
 const DashboardLayout = ({ children }) => {
+
   const links = [
   {
     label: "Home",
@@ -79,6 +80,7 @@ const DashboardLayout = ({ children }) => {
   },
 ];
     const [open, setOpen] = useState(false);
+   
 
   return (
     <div className="flex h-screen bg-gray-50">
