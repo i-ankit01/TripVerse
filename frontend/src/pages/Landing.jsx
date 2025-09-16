@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { HeroParallaxDemo } from "@/components/HeroParallex";
 import { ProblemSolution } from "@/components/ProblemSolution";
-import { Card } from "@/components/Card";
 import FeaturesSection from "@/components/features-section";
 import {
   NavBody,
@@ -15,6 +14,7 @@ import {
   MobileNavMenu,
   Navbar,
 } from "@/components/ui/resizable-navbar";
+import { AnimatedPin } from "@/components/AnimatedPin";
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -58,7 +58,7 @@ const Landing = () => {
             <NavItems items={navItems} />
             <div className="flex items-center gap-4">
               {/* <NavbarButton variant="secondary">Login</NavbarButton> */}
-              <NavbarButton className="bg-black text-white" variant="primary">Login</NavbarButton>
+              <NavbarButton href={"/signin"} className="bg-black text-white" variant="primary">Login</NavbarButton>
             </div>
           </NavBody>
 
@@ -111,6 +111,8 @@ const Landing = () => {
         <ProblemSolution />
 
         <FeaturesSection />
+
+        <AnimatedPin/>
 
         {/* Hero Section */}
         <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] px-4">
