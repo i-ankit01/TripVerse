@@ -1,10 +1,12 @@
+
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import NavBar from '/src/components/Navbar.jsx'; 
 import { HeroParallax } from "@/components/ui/hero-parallax";
 import { HeroParallaxDemo } from "@/components/HeroParallex";
 import { ProblemSolution } from "@/components/ProblemSolution";
 import { Card } from "@/components/Card";
+import FeaturesSection from "@/components/features-section";
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -21,13 +23,17 @@ const Landing = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50">
       {/* Navigation Bar */}
-      <Navbar />
+      <NavBar
+      />
+
 
       <HeroParallaxDemo/>
 
       <ProblemSolution/>
+     
+     <FeaturesSection/>
 
-      <Card/>
+      
 
       {/* Hero Section */}
       <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] px-4">

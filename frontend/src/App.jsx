@@ -16,6 +16,7 @@ import DashboardSettings from './pages/DashboardSettings'
 
 // Import layouts
 import DashboardLayout from './layouts/DashboardLayout'
+import NavBar from './components/Navbar'
 
 /**
  * App - Main application component with routing setup
@@ -27,7 +28,10 @@ function App() {
             <div className="App">
                 <Routes>
                     {/* Public Routes */}
-                    <Route path="/" element={<Landing />} />
+                    <Route path="/" element={ <>
+                        <NavBar/>
+                        <Landing />
+                        </>} />
                     <Route path="/signin" element={<SignIn />} />
                     <Route path="/signup" element={<SignUp />} />
                     
