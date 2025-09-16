@@ -3,6 +3,7 @@ dotenv.config();
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+const weatherRoutes = require("./routes/weather");
 
 import authRoutes from "./routes/auth.js";
 import planTripRoutes from "./routes/plan-trip.js";
@@ -17,10 +18,13 @@ app.use(cors({
   credentials: true
 }));
 
+
+
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/plan-trip", planTripRoutes);
 app.use("/api/chatbot", chatBotRoute);
+app.use("/api/weather", weatherRoutes);
 
 // Start server
 mongoose.connect(process.env.MONGO_URI)
