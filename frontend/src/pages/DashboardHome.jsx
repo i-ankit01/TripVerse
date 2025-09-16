@@ -1,8 +1,9 @@
 import React from 'react'
+import WeatherWidget from '../components/WeatherWidget' // ✅ import weather widget
 
 /**
  * DashboardHome - Main dashboard page
- * Welcome message and overview of the platform
+ * Welcome message, quick stats, weather, and recent activity
  */
 const DashboardHome = () => {
     return (
@@ -16,8 +17,9 @@ const DashboardHome = () => {
                     Explore the beauty and culture of Jharkhand through our interactive platform.
                 </p>
                 
-                {/* Quick Stats Cards */}
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+                {/* Quick Stats + Weather in grid */}
+                <div className='grid grid-cols-1 md:grid-cols-4 gap-6'>
+                    {/* Explore Card */}
                     <div className='bg-indigo-50 rounded-lg p-6 border border-indigo-100'>
                         <div className='flex items-center'>
                             <div className='text-3xl mr-4'>🗺️</div>
@@ -28,6 +30,7 @@ const DashboardHome = () => {
                         </div>
                     </div>
                     
+                    {/* Chat Card */}
                     <div className='bg-green-50 rounded-lg p-6 border border-green-100'>
                         <div className='flex items-center'>
                             <div className='text-3xl mr-4'>💬</div>
@@ -38,6 +41,7 @@ const DashboardHome = () => {
                         </div>
                     </div>
                     
+                    {/* Learn Card */}
                     <div className='bg-purple-50 rounded-lg p-6 border border-purple-100'>
                         <div className='flex items-center'>
                             <div className='text-3xl mr-4'>📚</div>
@@ -47,8 +51,13 @@ const DashboardHome = () => {
                             </div>
                         </div>
                     </div>
+
+                    {/* ✅ Weather Widget */}
+                    <WeatherWidget city="Ranchi" />
                 </div>
             </div>
+
+            
             
             {/* Recent Activity */}
             <div className='bg-white rounded-lg shadow-sm border border-gray-200 p-8'>
