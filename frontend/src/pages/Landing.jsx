@@ -1,22 +1,33 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import { HeroParallax } from "@/components/ui/hero-parallax";
+import { HeroParallaxDemo } from "@/components/HeroParallex";
+import { ProblemSolution } from "@/components/ProblemSolution";
+import { Card } from "@/components/Card";
 
 const Landing = () => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // ✅ Redirect if already logged in
-    const token = localStorage.getItem("accessToken");
-    if (token) {
-      navigate("/dashboard/home");
-    }
-  }, [navigate]);
+  // useEffect(() => {
+  //   // ✅ Redirect if already logged in
+  //   const token = localStorage.getItem("accessToken");
+  //   if (token) {
+  //     navigate("/dashboard/home");
+  //   }
+  // }, [navigate]);
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50">
       {/* Navigation Bar */}
       <Navbar />
+
+      <HeroParallaxDemo/>
+
+      <ProblemSolution/>
+
+      <Card/>
 
       {/* Hero Section */}
       <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] px-4">
