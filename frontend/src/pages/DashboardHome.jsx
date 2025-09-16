@@ -49,6 +49,8 @@ const DashboardHome = () => {
                     </div>
                 </div>
             </div>
+
+            
             
             {/* Recent Activity */}
             <div className='bg-white rounded-lg shadow-sm border border-gray-200 p-8'>

@@ -39,7 +39,7 @@ const NavBar = () => {
                animate={{
                  opacity: 1,
                  y: 0,
-                  color: ["#111827", "#1E3A8A", "#1E40AF", "#111827"],
+                  color: ["#7C2D12", "#7C2D12", "#7C2D12", "#7C2D12"],
                }}
                transition={{
                  duration: 8,

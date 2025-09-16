@@ -7,96 +7,96 @@ export function HeroParallaxDemo() {
 }
 export const products = [
   {
-    title: "Moonbeam",
-    link: "https://gomoonbeam.com",
+    title: " ",
+    link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
+      "https://www.ciim.in/wp-content/uploads/2025/02/places-to-visit-in-jharkhand.jpg",
   },
   {
-    title: "Cursor",
-    link: "https://cursor.so",
+    title: "",
+    link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cursor.png",
+      "https://www.godigit.com/content/dam/godigit/directportal/en/contenthm/best-places-to-visit-in-jharkhand.jpg",
   },
   {
-    title: "Rogue",
-    link: "https://userogue.com",
+    title: "",
+    link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/rogue.png",
-  },
-
-  {
-    title: "Editorially",
-    link: "https://editorially.org",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editorially.png",
-  },
-  {
-    title: "Editrix AI",
-    link: "https://editrix.ai",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editrix.png",
-  },
-  {
-    title: "Pixel Perfect",
-    link: "https://app.pixelperfect.quest",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
+      "https://ttw.wlimg.com/package-images/photo-big/dir_24/699123/313387.jpg",
   },
 
   {
-    title: "Algochurn",
-    link: "https://algochurn.com",
+    title: "",
+    link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
+      "https://img.etimg.com/thumb/width-1200,height-900,imgsize-587994,resizemode-75,msid-97390540/wealth/spend/holidaying-in-jharkhand-where-to-go-where-to-stay-total-cost.jpg",
   },
   {
-    title: "Aceternity UI",
-    link: "https://ui.aceternity.com",
+    title: "",
+    link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
+      "https://www.godigit.com/content/dam/godigit/directportal/en/chhinnamasta-temple.jpg",
   },
   {
-    title: "Tailwind Master Kit",
-    link: "https://tailwindmasterkit.com",
+    title: "",
+    link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
-  },
-  {
-    title: "SmartBridge",
-    link: "https://smartbridgetech.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
-  },
-  {
-    title: "Renderwork Studio",
-    link: "https://renderwork.studio",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
+      "https://plus.unsplash.com/premium_photo-1691031429261-aeb324882888?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8amhhcmtoYW5kfGVufDB8fDB8fHww",
   },
 
   {
-    title: "Creme Digital",
-    link: "https://cremedigital.com",
+    title: "",
+    link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGA-UWZUED-__Z9Zu7QsuTWLheaAGcspjDDQ&s",
   },
   {
-    title: "Golden Bells Academy",
-    link: "https://goldenbellsacademy.com",
+    title: "",
+    link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
+      "https://img.jagranjosh.com/images/2022/November/15112022/list-of-festivals-celebrated-in-jharkhand.jpg",
   },
   {
-    title: "Invoker Labs",
-    link: "https://invoker.lol",
+    title: "",
+    link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/invoker.png",
+      "https://i.pinimg.com/736x/4b/bd/4b/4bbd4bb374260fd2dd0be97a7b448d8d.jpg",
   },
   {
-    title: "E Free Invoice",
-    link: "https://efreeinvoice.com",
+    title: "",
+    link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxVg2Di9uhK_BoewWu1Mo1X1Z7OC4bhA0iy16v96v1BX6GT8zdPGU3mxXGwJQkJT-6fos&usqp=CAU",
+  },
+  {
+    title: "",
+    link: "",
+    thumbnail:
+      "https://hi-5services.com/img/gtr_jharkhand_1.jpg",
+  },
+
+  {
+    title: "",
+    link: "",
+    thumbnail:
+      "https://myhandicraftindia.com/wp-content/uploads/2024/04/iyuu.jpg",
+  },
+  {
+    title: "",
+    link: "",
+    thumbnail:
+      "https://dnn24.com/wp-content/uploads/2025/02/Munda-Art-Vibrant-Depictions-of-Nature.jpg",
+  },
+  {
+    title: "",
+    link: "",
+    thumbnail:
+      "https://i0.wp.com/iqrainfoservices.com/blog/wp-content/uploads/2020/06/Mithila_Painting.jpg?fit=600%2C307&ssl=1",
+  },
+  {
+    title: "",
+    link: "",
+    thumbnail:
+      "https://dnn24.com/wp-content/uploads/2025/02/Ganju-Art.jpg",
   },
 ];
