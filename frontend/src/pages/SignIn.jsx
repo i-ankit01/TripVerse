@@ -1,7 +1,13 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import AuthLayout from "../layouts/AuthLayout";
-import { login } from "../services/authService"; // 👈 use our API service
+import { useNavigate } from "react-router-dom";
+import { login } from "../services/authService"; // API service
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
+import {
+  IconBrandGithub,
+  IconBrandGoogle,
+} from "@tabler/icons-react";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -22,96 +28,112 @@ const SignIn = () => {
       // Call backend login API
       const data = await login(formData);
 
-      // Save tokens in localStorage
+      // Save token(s) in localStorage
       localStorage.setItem("accessToken", data.accessToken);
-      // localStorage.setItem("refreshToken", data.refreshToken);
 
       // Redirect to dashboard
       navigate("/dashboard/home");
     } catch (err) {
-      setError(err.message);
+      setError(err.message || "Login failed");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <AuthLayout>
-      <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">Welcome Back</h2>
-        <p className="text-gray-600">
-          Sign in to your Jharkhand Darshan account
-        </p>
-      </div>
+    <div className="min-h-screen flex items-center justify-center bg-white px-4">
+      <div className="w-full max-w-md">
+        {/* Error Message */}
+        {error && <div className="mb-4 text-red-600">{error}</div>}
 
-      {/* Error Message */}
-      {error && <div className="mb-4 text-red-600">{error}</div>}
+        <div className="shadow-input rounded-none border bg-white p-6 md:rounded-2xl md:p-8 ">
+          <h2 className="text-xl font-bold text-neutral-800  text-center">
+            Welcome to TripVerse
+          </h2>
+          <p className="mt-2 mb-4 text-sm text-neutral-600  text-center">
+            Please login with your account
+          </p>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Email Field */}
-        <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
-            Email Address
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors duration-200"
-            placeholder="Enter your email"
-          />
+          <form className="my-8" onSubmit={handleSubmit}>
+            <LabelInputContainer className="mb-4">
+              <Label htmlFor="email">Email Address</Label>
+              <Input
+                id="email"
+                name="email"
+                placeholder="projectmayhem@fc.com"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </LabelInputContainer>
+
+            <LabelInputContainer className="mb-8">
+              <Label htmlFor="password">Password</Label>
+              <Input
+                id="password"
+                name="password"
+                placeholder="••••••••"
+                type="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+            </LabelInputContainer>
+
+            <button
+              disabled={loading}
+              className="group/btn cursor-pointer relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white disabled:opacity-50"
+              type="submit"
+              
+            >
+              {loading ? "Signing in..." : "Sign in →"}
+              <BottomGradient />
+            </button>
+
+            <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent" />
+
+            <div className="flex flex-col space-y-4">
+              <button
+                className="group/btn shadow-input relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black "
+                type="button"
+                onClick={() => alert("GitHub login not implemented")}
+              >
+                <IconBrandGithub className="h-4 w-4 text-neutral-800 " />
+                <span className="text-sm text-neutral-700 ">
+                  Continue with GitHub
+                </span>
+                <BottomGradient />
+              </button>
+
+              <button
+                className="group/btn shadow-input relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black"
+                type="button"
+                onClick={() => alert("Google login not implemented")}
+              >
+                <IconBrandGoogle className="h-4 w-4 text-neutral-800 " />
+                <span className="text-sm text-neutral-700 ">
+                  Continue with Google
+                </span>
+                <BottomGradient />
+              </button>
+            </div>
+          </form>
         </div>
-
-        {/* Password Field */}
-        <div>
-          <label
-            htmlFor="password"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
-            Password
-          </label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors duration-200"
-            placeholder="Enter your password"
-          />
-        </div>
-
-        {/* Submit Button */}
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors duration-200 disabled:opacity-50"
-        >
-          {loading ? "Signing in..." : "Sign In"}
-        </button>
-      </form>
-
-      {/* Sign Up Link */}
-      <div className="mt-6 text-center">
-        <p className="text-gray-600">
-          Don't have an account?{" "}
-          <Link
-            to="/signup"
-            className="text-indigo-600 hover:text-indigo-700 font-medium"
-          >
-            Sign up here
-          </Link>
-        </p>
       </div>
-    </AuthLayout>
+    </div>
   );
 };
+
+const BottomGradient = () => (
+  <>
+    <span className="absolute inset-x-0 -bottom-px block h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-0 transition duration-500 group-hover/btn:opacity-100" />
+    <span className="absolute inset-x-10 -bottom-px mx-auto block h-px w-1/2 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100" />
+  </>
+);
+
+const LabelInputContainer = ({ children, className }) => (
+  <div className={cn("flex w-full flex-col space-y-2", className)}>{children}</div>
+);
 
 export default SignIn;
