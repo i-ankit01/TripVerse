@@ -16,6 +16,7 @@ import DashboardSettings from './pages/DashboardSettings'
 
 // Import layouts
 import DashboardLayout from './layouts/DashboardLayout'
+import DestinationDetailPage from './pages/DestinationDetailPage'
 
 /**
  * App - Main application component with routing setup
@@ -40,6 +41,7 @@ function App() {
                     <Route path="/dashboard/bookings" element={<DashboardLayout><DashboardBookings /></DashboardLayout>} />
                     <Route path="/dashboard/chat" element={<DashboardLayout><DashboardChat /></DashboardLayout>} />
                     <Route path="/dashboard/settings" element={<DashboardLayout><DashboardSettings /></DashboardLayout>} />
+                    <Route path="/dashboard/explore/:id" element={<DashboardLayout><DestinationDetailPage/></DashboardLayout>} />
                     
                     {/* Redirect to home for unknown routes */}
                     <Route path="*" element={<Landing />} />

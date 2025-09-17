@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export function CtusSection() {
   return (
-    <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-accent/10">
+    <section className="py-24 mt-20 bg-gradient-to-br from-primary/10 via-background to-accent/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">

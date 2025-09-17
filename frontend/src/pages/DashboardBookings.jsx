@@ -1,90 +1,95 @@
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { ArrowLeft, Calendar, MapPin, Users, Clock } from "lucide-react"
+import { Link } from "react-router-dom"
 import React from 'react'
 
-/**
- * DashboardBookings - My Bookings page
- * Placeholder page for managing user bookings and reservations
- */
-const DashboardBookings = () => {
-    return (
-        <div className='max-w-6xl mx-auto p-6'>
-            {/* Page Header */}
-            <div className='mb-8'>
-                <h1 className='text-3xl font-bold text-gray-900 mb-4'>My Bookings</h1>
-                <p className='text-lg text-gray-600'>
-                    Manage your reservations and track your Jharkhand travel plans
-                </p>
-            </div>
-            
-            {/* Coming Soon Card */}
-            <div className='bg-white rounded-lg shadow-sm border border-gray-200 p-8 text-center'>
-                <div className='text-6xl mb-6'>📋</div>
-                <h2 className='text-2xl font-bold text-gray-900 mb-4'>Coming Soon</h2>
-                <p className='text-gray-600 mb-6 max-w-2xl mx-auto'>
-                    Your booking management system is under development. Soon you'll be able to 
-                    view, modify, and cancel your reservations all in one place.
-                </p>
-                
-                {/* Feature Preview */}
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-8'>
-                    <div className='p-4 bg-green-50 rounded-lg border border-green-100'>
-                        <div className='text-3xl mb-3'>📅</div>
-                        <h3 className='font-semibold text-green-900 mb-2'>Booking History</h3>
-                        <p className='text-green-700 text-sm'>View all your past and upcoming trips</p>
-                    </div>
-                    
-                    <div className='p-4 bg-blue-50 rounded-lg border border-blue-100'>
-                        <div className='text-3xl mb-3'>✏️</div>
-                        <h3 className='font-semibold text-blue-900 mb-2'>Modify Bookings</h3>
-                        <p className='text-blue-700 text-sm'>Change dates, add services, or update details</p>
-                    </div>
-                    
-                    <div className='p-4 bg-red-50 rounded-lg border border-red-100'>
-                        <div className='text-3xl mb-3'>❌</div>
-                        <h3 className='font-semibold text-red-900 mb-2'>Cancel Reservations</h3>
-                        <p className='text-red-700 text-sm'>Cancel bookings with easy refund process</p>
-                    </div>
-                </div>
-                
-                {/* Sample Booking Types */}
-                <div className='mt-8'>
-                    <h3 className='text-lg font-semibold text-gray-900 mb-4'>Types of Bookings</h3>
-                    <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                        <div className='p-4 bg-gray-50 rounded-lg border border-gray-200 text-left'>
-                            <div className='flex items-center mb-2'>
-                                <div className='text-2xl mr-3'>🏨</div>
-                                <h4 className='font-medium text-gray-900'>Hotels & Accommodations</h4>
-                            </div>
-                            <p className='text-gray-600 text-sm'>Book your stay in Jharkhand</p>
-                        </div>
-                        
-                        <div className='p-4 bg-gray-50 rounded-lg border border-gray-200 text-left'>
-                            <div className='flex items-center mb-2'>
-                                <div className='text-2xl mr-3'>🚌</div>
-                                <h4 className='font-medium text-gray-900'>Tours & Transportation</h4>
-                            </div>
-                            <p className='text-gray-600 text-sm'>Guided tours and travel arrangements</p>
-                        </div>
-                        
-                        <div className='p-4 bg-gray-50 rounded-lg border border-gray-200 text-left'>
-                            <div className='flex items-center mb-2'>
-                                <div className='text-2xl mr-3'>🎫</div>
-                                <h4 className='font-medium text-gray-900'>Event Tickets</h4>
-                            </div>
-                            <p className='text-gray-600 text-sm'>Festivals and cultural events</p>
-                        </div>
-                        
-                        <div className='p-4 bg-gray-50 rounded-lg border border-gray-200 text-left'>
-                            <div className='flex items-center mb-2'>
-                                <div className='text-2xl mr-3'>🍽️</div>
-                                <h4 className='font-medium text-gray-900'>Restaurant Reservations</h4>
-                            </div>
-                            <p className='text-gray-600 text-sm'>Book tables at local restaurants</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+export default function DashboardBooking() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-green-50 to-orange-100">
+      <div className="container mx-auto px-4 py-8">
+        {/* Header */}
+        <div className="flex items-center gap-4 mb-8">
+          <Link to="/">
+            <Button variant="outline" size="sm" className="gap-2 bg-transparent">
+              <ArrowLeft className="h-4 w-4" />
+              Back to Home
+            </Button>
+          </Link>
+          <Badge variant="secondary" className="bg-green-100 text-green-800">
+            Coming Soon
+          </Badge>
         </div>
-    )
-}
 
-export default DashboardBookings
+        {/* Main Content */}
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-8">
+            <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-orange-500 to-green-500 rounded-full mb-6">
+              <Calendar className="h-12 w-12 text-white" />
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">My Bookings</h1>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              Manage all your Jharkhand travel bookings in one place. Track your adventures, modify plans, and create
+              memories.
+            </p>
+          </div>
+
+          {/* Feature Cards */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <Card className="border-0 shadow-lg bg-white/80 backdrop-blur-sm">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MapPin className="h-6 w-6 text-orange-600" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Trip Management</h3>
+                <p className="text-sm text-gray-600">
+                  View, modify, and cancel your bookings for hotels, tours, and activities
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg bg-white/80 backdrop-blur-sm">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="h-6 w-6 text-green-600" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Group Bookings</h3>
+                <p className="text-sm text-gray-600">
+                  Coordinate group trips and manage bookings for family and friends
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg bg-white/80 backdrop-blur-sm">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Clock className="h-6 w-6 text-orange-600" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Real-time Updates</h3>
+                <p className="text-sm text-gray-600">
+                  Get instant notifications about booking confirmations and travel updates
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Coming Soon Info */}
+          <Card className="border-0 shadow-xl bg-gradient-to-r from-orange-500 to-green-500 text-white">
+            <CardContent className="p-8">
+              <Calendar className="h-8 w-8 mx-auto mb-4" />
+              <h2 className="text-2xl font-bold mb-4">Launching Soon</h2>
+              <p className="text-orange-50 mb-6">
+                Your personal travel dashboard is coming soon! Manage all your Jharkhand adventures from booking to
+                memories in one seamless experience.
+              </p>
+              <Button variant="secondary" size="lg" className="bg-white text-orange-700 hover:bg-gray-100">
+                Get Early Access
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </div>
+  )
+}
