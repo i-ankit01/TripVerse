@@ -15,6 +15,11 @@ import {
   Navbar,
 } from "@/components/ui/resizable-navbar";
 import { AnimatedPin } from "@/components/AnimatedPin";
+import { CtusSection } from "@/components/Ctus-section";
+import { Footer } from "@/components/footer";
+
+
+
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -114,6 +119,8 @@ const Landing = () => {
 
         <AnimatedPin/>
 
+        <CtusSection/>
+
         {/* Hero Section */}
         <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] px-4">
           <div className="text-center max-w-4xl mx-auto">
@@ -150,6 +157,7 @@ const Landing = () => {
             </p>
           </div>
         </div>
+        <Footer/>
       </div>
     </div>
   );

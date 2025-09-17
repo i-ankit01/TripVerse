@@ -8,17 +8,17 @@ export function AnimatedPin() {
     {
       title: "Dassam Falls",
       description: "Majestic waterfall amidst lush green forests.",
-      image: "https://placekitten.com/400/400",
+      image: "https://indiain360.com/wp-content/uploads/2020/12/jonha-falls-jharkhand-tripinfi.jpg",
     },
     {
       title: "Parasnath Hill",
       description: "Pilgrim’s paradise with breathtaking mountain views.",
-      image: "https://placekitten.com/401/400",
+      image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/6c/f6/c8/parasnath-hills.jpg?w=900&h=-1&s=1",
     },
     {
       title: "Betla National Park",
       description: "Wildlife haven with tigers and serene landscapes.",
-      image: "https://placekitten.com/402/400",
+      image: "https://www.cleartrip.com/collections/wp-content/uploads/2018/12/corbett-national-park-in-uttarakhand.jpg",
     },
   ];
 
