@@ -3,11 +3,12 @@ dotenv.config();
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-const weatherRoutes = require("./routes/weather");
+
 
 import authRoutes from "./routes/auth.js";
 import planTripRoutes from "./routes/plan-trip.js";
 import chatBotRoute from "./routes/chatbot.js"
+import weatherRoutes from "./routes/weather.js"
 
 const app = express();
 app.use(express.json());

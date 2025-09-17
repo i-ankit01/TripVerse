@@ -1,6 +1,8 @@
-const express = require("express");
-const fetch = require("node-fetch");
-require("dotenv").config();
+import express from "express";
+import fetch from "node-fetch";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const router = express.Router();
 
@@ -31,4 +33,4 @@ router.get("/:city", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
