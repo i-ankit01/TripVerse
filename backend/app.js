@@ -15,7 +15,7 @@ app.use(express.json());
 
 // allow frontend to call backend
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "https://trip-verse.netlify.app/",
   credentials: true
 }));
 
