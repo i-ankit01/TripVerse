@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion, useScroll, useTransform, useSpring } from "motion/react";
+import vrlogo from "@/assets/vrlogo.webp"
 
 export const HeroParallax = ({ products }) => {
   const firstRow = products.slice(0, 5);
@@ -41,7 +42,7 @@ export const HeroParallax = ({ products }) => {
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[300vh] py-10 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -87,18 +88,35 @@ export const HeroParallax = ({ products }) => {
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-10 md:py-10 px-4 w-full  left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold text-black">
-        Discover Jharkhand <br /> Where Nature Meets Culture
-      </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 text-black">
-        Experience the untouched beauty of Jharkhand through AI-powered travel
-        planning, authentic cultural experiences, and sustainable tourism that
-        empowers local communities.
-      </p>
+    <div className="max-w-7xl relative mx-auto px-4 w-full flex flex-col md:flex-row items-start justify-between">
+      {/* Left side: Text */}
+      <div className="flex-1 mt-10 md:mt-20 z-10">
+        <h1 className="text-2xl md:text-6xl font-bold text-black">
+          Discover Jharkhand <br /> Where Nature Meets Culture
+        </h1>
+        <p className="max-w-2xl text-base md:text-xl mt-8 text-black">
+          Experience the untouched beauty of Jharkhand through AI-powered travel
+          planning, authentic cultural experiences, and sustainable tourism that
+          empowers local communities.
+        </p>
+      </div>
+
+      {/* Right side: Image anchored bottom */}
+      <div className="flex-1 relative flex justify-end items-end">
+        <div className="relative w-[600px] mt-30">
+          <img
+            src={vrlogo}
+            alt="Jharkhand Nature"
+            className="w-full h-auto object-contain"
+          />
+          {/* Gradient overlay for fade effect at bottom */}
+          <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+        </div>
+      </div>
     </div>
   );
 };
+
 
 export const ProductCard = ({ product, translate }) => {
   return (

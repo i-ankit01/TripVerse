@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 // Use React Router's Link for client-side navigation (prevents full page reloads)
 import { Link } from "react-router-dom";
 // import { IconMenu2, IconX } from "@tabler/icons-react";
+import tvlogo from "@/assets/tvlogo.jpg"
 import {
   motion,
   AnimatePresence,
@@ -185,10 +186,11 @@ export const NavbarLogo = () => {
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
       <img
-        src="#"
+        src={tvlogo}
         alt="logo"
         width={30}
         height={30}
+        className="object-cover rounded-full"
       />
       <span className="font-bold text-xl text-black">TripVerse</span>
     </a>
