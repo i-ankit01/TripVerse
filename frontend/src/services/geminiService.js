@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://tripverse-qz6k.onrender.com/api";
 
 export async function getOutput(formData){
     const result = await fetch(`${API_URL}/plan-trip`, {
