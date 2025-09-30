@@ -14,10 +14,22 @@ const app = express();
 app.use(express.json());
 
 // allow frontend to call backend
+const allowedOrigins = [
+  "http://localhost:5173",           
+  "https://farm-help-eight.vercel.app"  
+];
+
 app.use(cors({
-  origin: "https://trip-verse.netlify.app/",
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true
 }));
+
 
 
 
