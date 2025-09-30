@@ -16,7 +16,8 @@ app.use(express.json());
 // allow frontend to call backend
 const allowedOrigins = [
   "http://localhost:5173",           
-  "https://trip-verse.netlify.app"  
+  "https://trip-verse.netlify.app",
+  "https://www.trip-verse.netlify.app"
 ];
 
 app.use(cors({
